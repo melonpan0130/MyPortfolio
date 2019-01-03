@@ -8,24 +8,30 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi+Maru">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
         <style>
             body {
                 position: relative;
+                font-family: 'Kosugi Maru', sans-serif;
                 margin: 0;
                 padding: 0;
+            }
+
+            .carousel-item {
+                height: 18cm;
             }
         </style>
     </head> 
     <body data-spy="scroll" data-target=".navbar" data-offset="50">
         <div class="jumbotron text-center" 
-        style="margin-top: 50px; margin-bottom: 0; background-image: url('img/20170917_134940_Film4.jpg'); background-size: cover;">
-            <h1>My first Bootstrap Page</h1>
-            <p>Resize this responsive page to see the effect!</p>
+        style="margin-top: 50px; margin-bottom: 0; height: 16cm; background-image: url('img/20170917_134940_Film4.jpg'); background-size: cover;">
+            <h1>はじめまして、田中です。</h1>
+            <p>私の話を聞いてくれませんか？</p>
         </div>
         <!--
         <div class="container">
@@ -46,21 +52,25 @@
         </div>
         --> 
 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <nav class="navbar navbar-expand-sm bg-info navbar-dark fixed-top">
             <ul class="navbar-nav">
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link" href="#section1">Section 1</a>
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">私の学校生活</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#section11">スタディー</a>
+                        <a class="dropdown-item" href="#section12">特別活動</a>
+                    </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="#section2">Section 2</a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item">
                     <a class="nav-link" href="#section3">Section 3</a>
                 </li>
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Section 4
-                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Section 4</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#section41">Link 1</a>
                         <a class="dropdown-item" href="#section42">Link 2</a>
@@ -69,16 +79,58 @@
             </ul>
         </nav>
 
-        <div id="section1" class="container-fluid bg-success" style="padding-top: 500px; padding-bottom: 70px">
-            <h1>Section 1</h1>
-            <p>Try to scroll this section and look at the navigation bar</p>
+        <div id="section1" class="container-fluid bg-success text-light" style="padding-top: 500px; padding-bottom: 70px; background-image: url('img/20171025_173813.jpg'); background-size: cover; background-position: right bottom;">
+            <h1>私の学校生活</h1>
+            <p>私は今美林情報科学高校に生活しています。</p>
         </div>
+        <div id="section11" class="container-fluid bg-success text-light" style="padding-top: 500px; padding-bottom: 70px; background-image: url('img/IMG_7332.jpg'); background-size: cover;">
+            <h1>スタディー</h1>
+            <p>私は今美林情報科学高校に生活しています。</p>
+        </div>
+        <div id="section12" class="container-fluid bg-success text-light" style="padding-top: 500px; padding-bottom: 70px; background-image: url('img/20171025_173813.jpg'); background-size: cover; background-position: right bottom;">
+            <h1>特別活動</h1>
+            <p>私は今美林情報科学高校に生活しています。</p>
+        </div>
+
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ol>
+            <!-- The slidesshow -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/20171220_184854_Film4.jpg" alt="aduino" width="100%" >
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>aduino</h5>
+                        <p>I went to EV3 Lecture to practice EV3.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/20180613_100503_000.jpg" alt="LEGO Lecture" width="100%">
+                </div>
+                <div class="carousel-item">
+                    <video src="img/20180613_112746.mp4" width="100%"></video>
+                </div>
+            </div>
+        </div>
+
+        <!-- Left and right controls-->
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
+
         <div id="section2" class="container-fluid bg-warning" style="padding-top: 500px; padding-bottom: 70px">
-            <h1>Section 2</h1>
+            <h1>プロジェクト</h1>
             <p>Try to scroll this section and look at the navigation bar</p>
         </div>
         <div id="section3" class="container-fluid bg-secondary" style="padding-top: 500px; padding-bottom: 70px">
-            <h1>Section 3</h1>
+            <h1>趣味</h1>
             <p>Try to scroll this section and look at the navigation bar</p>
         </div>
         <div id="section41" class="container-fluid bg-danger" style="padding-top: 500px; padding-bottom: 70px">
