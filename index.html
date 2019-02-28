@@ -5,7 +5,6 @@
         <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         
@@ -20,6 +19,25 @@
                 setTimeout(function(){
                     $("#title_h").animate({width:'500px'});
                 }, 4000);
+                
+                // change navigation color and background
+                $("nav").each(function() {
+                    var $window = $(window);
+                    var sec2 = $("#section2").offset().top-63.2;
+                    var sec3 = $("#section3").offset().top-63.2;
+                    
+                    console.log(sec2);
+                    console.log(sec3);
+                    $window.on("scroll", function() {    
+                        console.log($window.scrollTop());
+                        if($window.scrollTop()>sec3)
+                            $("nav").removeClass("bg-info").css("background-color", "#FF7159");
+                        else if($window.scrollTop()>sec2)
+                            $("nav").removeClass("navbar-light").addClass("navbar-dark").css("background-color", "#1C3CA0");
+                        else
+                            $("nav").removeClass("navbar-dark").addClass("navbar-light").css("background-color", "rgba(0,0,0,0)");
+                    }); // window.on
+                })
                 
             });
             
@@ -82,13 +100,17 @@
             } 
             #fade-text { font-size: 5em; } 
             
-            
+            /* navigation bar */
+            nav a {
+                margin: 0 10px;
+                font-size: 1.3em;
+            }
         </style>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50" onresize="resize()">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+        <nav class="navbar navbar-light justify-content-end fixed-top">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#section1">section2</a></li>
+                <li class="nav-item"><a class="nav-link" href="#section1">はじめまして。</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item"><a id="nav_section2" class="nav-link" href="#section2">section2</a></li>
@@ -119,15 +141,13 @@
         </div>
 
         <!-- section 2 -->
-        <div id="section2" class="container-fluid bg-warning" style="padding: 70px; height: 70vh;">
+        <div id="section2" class="container-fluid bg-warning" style="height: 80vh; padding-top: 70px;">
             <div>
-            <h1>section2</h1>
-                
             </div>
         </div>
 
         <!-- section 3 -->
-        <div id="section3" class="container-fluid bg-success" style="padding-top: 70px;padding-bottom: 70px; height: 1000px;">
+        <div id="section3" class="container-fluid" style="padding-top: 70px; padding-bottom: 70px; height: 1000px;">
             <h1>section3</h1>
         </div>
     </body>
