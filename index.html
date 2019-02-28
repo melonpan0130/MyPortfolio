@@ -1,13 +1,38 @@
 <html>
     <head>
         <title>Portfolio_diary</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Kosugi+Maru" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/earlyaccess/kokoro.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi+Maru" >
+        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kokoro.css" >
+        <script>
+            $(function() {
+                // highlighter
+                resize();
+                
+                setTimeout(function(){
+                    $("#title_h").animate({width:'500px'});
+                }, 4000);
+                
+            });
+            
+            function resize() {
+                var left = window.innerWidth/2 - 280;
+                var top = (window.innerHeight/100*90)/2 - 50;
+                $("#title_h").css({"top":top+"", "left":left+""});
+            }
+            
+        </script>
         <style>
             body {
-                font-family: 'Kosugi Maru', sans-serif;
+                font-family: 'Kosugi Maru';
             }
 
             /* writting title */
@@ -28,13 +53,13 @@
             @-webkit-keyframes stroke_offset { 
                 10% {stroke-dasharray: 0 250; stroke-opacity: 1 } 
                 50% {stroke-dasharray: 250 0; stroke-opacity: .75 } 
-                55%, 70% {stroke-dasharray: 0 250; stroke-opacity: 0 }
+                55%, 95% {stroke-dasharray: 0 250; stroke-opacity: 0 }
             }
             
             @keyframes stroke_offset { 
                 10% {stroke-dasharray: 0 250; stroke-opacity: 1 } 
                 50% {stroke-dasharray: 250 0; stroke-opacity: .75 } 
-                55%, 70% {stroke-dasharray: 0 250; stroke-opacity: 0 } 
+                55%, 95% {stroke-dasharray: 0 250; stroke-opacity: 0 } 
             } 
             
             .fill { 
@@ -55,24 +80,32 @@
                 25%, 35% { fill-opacity: 0 } 
                 75%, 90%, 100% { fill-opacity: 1 } 
             } 
-            #fade-text { font-size: 4em; } 
+            #fade-text { font-size: 5em; } 
+            
+            
         </style>
     </head>
-    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <body data-spy="scroll" data-target=".navbar" data-offset="50" onresize="resize()">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="#section2">section2</a></li>
+                <li class="nav-item"><a class="nav-link" href="#section1">section2</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a id="nav_section2" class="nav-link" href="#section2">section2</a></li>
             </ul>
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link" href="#section3">section3</a></li>
             </ul>
         </nav>
+        
         <!-- section 1 -->
-        <div class="container-fluid bg-success" style="height: 600px; padding-top: 70px;padding-bottom: 70px; background-image: url('img/dot.jpg');background-size: contain; display: table;">
-            <div class="drawsvg" style="display: table-cell; vertical-align: middle; position: relative;">
+        <div id="section1" class="container-fluid" style="height: 90vh; padding-top: 70px;padding-bottom: 70px; background-image: url('img/dot.jpg');background-size: cover; display: table;position: relative;">
+            
+            <div class="drawsvg" style="display: table-cell; vertical-align: middle; position: relative; z-index: 2;">
                 <svg version="1.1" viewBox="0 0 700 300">
                     <symbol id="fade-text">
-                        <text x="50%" y="50%" text-anchor="middle" style="font-family: 'Kokoro'; font-weight: bolder;">はじめまして。</text>
+                        <text x="50%" y="40%" text-anchor="middle" style="font-family: 'Kokoro'; font-weight: bolder;">はじめまして。</text>
+                        <text x="50%" y="75%" text-anchor="middle">田中です。</text>
                     </symbol>
                     <g>
                         <use class="stroke" xlink:href="#fade-text"/>
@@ -80,10 +113,13 @@
                     </g>
                 </svg>
             </div>
+            
+            <div id="title_h" style="width: 0; height: 100px; background-color: bisque; position: absolute; left: 50vw; top: 50%-50px; transform: skewX(20deg); z-index: 1; opacity: 0.6;border-radius: 25px;"></div>
+            
         </div>
 
         <!-- section 2 -->
-        <div id="section2" class="container-fluid bg-warning" style="padding: 70px;">
+        <div id="section2" class="container-fluid bg-warning" style="padding: 70px; height: 70vh;">
             <div>
             <h1>section2</h1>
                 
@@ -91,7 +127,7 @@
         </div>
 
         <!-- section 3 -->
-        <div id="section3" class="container-fluid bg-success" style="padding-top: 70px;padding-bottom: 70px">
+        <div id="section3" class="container-fluid bg-success" style="padding-top: 70px;padding-bottom: 70px; height: 1000px;">
             <h1>section3</h1>
         </div>
     </body>
