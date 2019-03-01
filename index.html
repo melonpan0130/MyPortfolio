@@ -2,22 +2,24 @@
     <head>
         <title>Portfolio_diary</title>
         <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.js"></script>
         <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
         
         
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kosugi+Maru" >
-        <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/kokoro.css" >
+        <link href="https://fonts.googleapis.com/css?family=Laila" rel="stylesheet">
         <script>
             $(function() {
                 // highlighter
                 resize();
                 
                 setTimeout(function(){
-                    $("#title_h").animate({width:'500px'});
+                    $("#title_h").animate({width:'31em'});
                 }, 4000);
                 
                 // change navigation color and background
@@ -26,20 +28,25 @@
                     var sec2 = $("#section2").offset().top-63.2;
                     var sec3 = $("#section3").offset().top-63.2;
                     
-                    console.log(sec2);
-                    console.log(sec3);
                     $window.on("scroll", function() {    
                         console.log($window.scrollTop());
-                        if($window.scrollTop()>sec3)
+                        if($window.scrollTop()>sec3){
                             $("nav").removeClass("bg-info").css("background-color", "#FF7159");
-                        else if($window.scrollTop()>sec2)
+                            $(".sec3_h").animate({width: '100%'});
+                        }
+                        else if($window.scrollTop()>sec2){
                             $("nav").removeClass("navbar-light").addClass("navbar-dark").css("background-color", "#1C3CA0");
+                            $(".sec2_h").animate({width: '100%'}, 1000);
+                            $("#section2 symbol").attr("id", "fade-text2");
+                        }
                         else
                             $("nav").removeClass("navbar-dark").addClass("navbar-light").css("background-color", "rgba(0,0,0,0)");
                     }); // window.on
-                })
+                });
                 
-            });
+                
+                
+            });// init
             
             function resize() {
                 var left = window.innerWidth/2 - 280;
@@ -51,6 +58,8 @@
         <style>
             body {
                 font-family: 'Kosugi Maru';
+                margin: 0;
+                padding: 0;
             }
 
             /* writting title */
@@ -98,7 +107,7 @@
                 25%, 35% { fill-opacity: 0 } 
                 75%, 90%, 100% { fill-opacity: 1 } 
             } 
-            #fade-text { font-size: 5em; } 
+            #fade-text {  } 
             
             /* navigation bar */
             nav a {
@@ -121,12 +130,12 @@
         </nav>
         
         <!-- section 1 -->
-        <div id="section1" class="container-fluid" style="height: 90vh; padding-top: 70px;padding-bottom: 70px; background-image: url('img/dot.jpg');background-size: cover; display: table;position: relative;">
+        <div id="section1" class="container-fluid" style="height: 90vh; padding: 70px 0; background-image: url('img/dot.jpg');background-size: cover; display: table; position: relative;">
             
             <div class="drawsvg" style="display: table-cell; vertical-align: middle; position: relative; z-index: 2;">
                 <svg version="1.1" viewBox="0 0 700 300">
-                    <symbol id="fade-text">
-                        <text x="50%" y="40%" text-anchor="middle" style="font-family: 'Kokoro'; font-weight: bolder;">はじめまして。</text>
+                    <symbol id="fade-text" style="font-size: 5em;">
+                        <text x="50%" y="40%" text-anchor="middle">はじめまして。</text>
                         <text x="50%" y="75%" text-anchor="middle">田中です。</text>
                     </symbol>
                     <g>
@@ -141,14 +150,29 @@
         </div>
 
         <!-- section 2 -->
-        <div id="section2" class="container-fluid bg-warning" style="height: 80vh; padding-top: 70px;">
-            <div>
+        <div id="section2" class="container-fluid row" style="padding: 5%; margin: 0; color: #0E1626; background-color: #FFC11C;">
+            <div class="col-4" style="padding: 0;">
+                <img src="img/me.jpg" style="width: 80%; border-radius: 50%; margin: 0 auto; display: block;" />
+                <div style="margin: 50px;font-family: 'Laila';font-size: 0.9em; font-weight: bold; position: relative;">
+                    <p style="margin: 5; position: relative; z-index: 2;">e-mail: eun01300714@gmail.com</p>
+                    <p style="margin: 5; position: relative;z-index: 2;">github: <a href="https://github.com/melonpan0130" data-toggle="tooltip" title="click me!" data-placement="bottom" onclick="window.open(this.href, '_blank'); return false;">https://github.com/melonpan0130</a></p>
+                    
+                    <div class="sec2_h" style="position: absolute; top: 0; left: 0; width: 0%; height: 100%; background-color: rgba(192, 154, 141, 0.5); border-radius: 15px; transform: skewX(-20deg); z-index: 1;"></div>
+                </div>
+            </div>
+            
+            <div class="col-8" style="padding: 0; background-color: rgba(255,255,255,0.5);">
+                <!-- find the other text effect -->
+                <h1>hello</h1>
             </div>
         </div>
 
         <!-- section 3 -->
-        <div id="section3" class="container-fluid" style="padding-top: 70px; padding-bottom: 70px; height: 1000px;">
-            <h1>section3</h1>
+        <div id="section3" class="container-fluid" style="padding: 100px 0; height: 1000px; margin: 0; background-image: url(img/grid.png); background-repeat: repeat;">
+            <div style="margin: 0 auto; position: relative;">
+                <h1 style="position: relative; font-size: 5em; font-weight: bold; text-align: center; z-index: 2;">PROJECT</h1>
+                <div class="sec3_h" style="position: absolute; top: 0; left: 0; width: 0%; height: 100%; background-color: #FFE8B9; opacity: 0.5; z-index: 1;"></div>
+            </div>
         </div>
     </body>
 </html>
