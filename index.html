@@ -114,6 +114,19 @@
                 margin: 0 10px;
                 font-size: 1.3em;
             }
+            
+            /* section 2 */
+            .underline--magical {
+                background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+                background-repeat: no-repeat;
+                background-size: 100% 0.2em;
+                background-position: 0 88%;
+                transition: background-size 0.25s ease-in;
+                &:hover {
+                background-size: 100% 88%;
+                }
+            }
+            
         </style>
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset="50" onresize="resize()">
@@ -152,7 +165,7 @@
         <!-- section 2 -->
         <div id="section2" class="container-fluid row" style="padding: 5%; margin: 0; color: #0E1626; background-color: #FFC11C;">
             <div class="col-4" style="padding: 0;">
-                <img src="img/me.jpg" style="width: 80%; border-radius: 50%; margin: 0 auto; display: block;" />
+                <img src="img/grid.png" style="width: 80%; border-radius: 50%; margin: 0 auto; display: block;" />
                 <div style="margin: 50px;font-family: 'Laila';font-size: 0.9em; font-weight: bold; position: relative;">
                     <p style="margin: 5; position: relative; z-index: 2;">e-mail: eun01300714@gmail.com</p>
                     <p style="margin: 5; position: relative;z-index: 2;">github: <a href="https://github.com/melonpan0130" data-toggle="tooltip" title="click me!" data-placement="bottom" onclick="window.open(this.href, '_blank'); return false;">https://github.com/melonpan0130</a></p>
@@ -164,11 +177,12 @@
             <div class="col-8" style="padding: 0; background-color: rgba(255,255,255,0.5);">
                 <!-- find the other text effect -->
                 <h1>hello</h1>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <span class="underline-magical">Lorem Ipsum</span> has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
         </div>
 
         <!-- section 3 -->
-        <div id="section3" class="container-fluid" style="padding: 100px 0; height: 1000px; margin: 0; background-image: url(img/grid.png); background-repeat: repeat;">
+        <div id="section3" class="container-fluid" style="padding: 200px 0; height: 1000px; margin: 0; background-image: url(img/grid.png); background-repeat: repeat;">
             <div style="margin: 0 auto; position: relative;">
                 <h1 style="position: relative; font-size: 5em; font-weight: bold; text-align: center; z-index: 2;">PROJECT</h1>
                 <div class="sec3_h" style="position: absolute; top: 0; left: 0; width: 0%; height: 100%; background-color: #FFE8B9; opacity: 0.5; z-index: 1;"></div>
